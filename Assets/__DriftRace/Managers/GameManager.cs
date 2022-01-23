@@ -11,6 +11,7 @@ namespace DriftRace
 
         void Start()
         {
+            Application.targetFrameRate = 60;
             locomotionAbility.StartAbility();
         }
 

@@ -9,8 +9,10 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: MAT_Spline
   m_Shader: {fileID: 4800000, guid: 7ffc1bc2bbb1ef64f84b552b2d2f0619, type: 3}
-  m_ShaderKeywords: TCP2_MOBILE TCP2_REFLECTIONS_FRESNEL TCP2_RIM_LIGHTING_LIGHTMASK
-    TCP2_SHADOW_TEXTURE TCP2_UV_NORMALS_FULL
+  m_ShaderKeywords: _AD_CUTOUT_GEOMETRIC_COUNT_ONE _AD_CUTOUT_GEOMETRIC_TYPE_NONE
+    _AD_CUTOUT_STANDARD_SOURCE_MAPS_MAPPING_TYPE_DEFAULT _AD_CUTOUT_STANDARD_SOURCE_NONE
+    _AD_EDGE_ADDITIONAL_COLOR_NONE _AD_EDGE_BASE_SOURCE_NONE _AD_EDGE_UV_DISTORTION_SOURCE_DEFAULT
+    _AD_GLOBAL_CONTROL_ID_NONE _AD_STATE_DISABLED
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -65,7 +67,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 90898843034277b428d4e5fe0fe6749a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Ramp:

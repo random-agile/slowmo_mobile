@@ -18,7 +18,7 @@ namespace DriftRace
         [SerializeField] protected LineRenderer rope;
 
         [Header("Settings")]
-        [SerializeField] protected float speed = 10f;
+        [SerializeField] protected float speed = 5f;
         [SerializeField] protected float rotationSpeed = 15f;
         [SerializeField] protected LayerMask groundMask;
 
@@ -114,7 +114,7 @@ namespace DriftRace
 
         private void DoActionGoForward()
         {
-            _owner.Velocity = currentForward * speed;
+            _owner.Velocity = currentForward * speed * 1.5f;
             _owner.Body.Rb.rotation = Quaternion.Slerp(_owner.Body.Rb.rotation, Quaternion.LookRotation(currentForward), rotationSpeed * Time.deltaTime);
         }
 

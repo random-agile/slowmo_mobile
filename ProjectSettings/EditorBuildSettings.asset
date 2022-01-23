@@ -8,9 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/__DriftRace/Scenes/Game.unity
     guid: 7a1a0c2aeb7b64b0582a3ad9872a68b9
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/__DriftRace/Scenes/SCN_Level_1.unity
     guid: 1c8c909ec358e4937aca0f56d34b1d6c
