@@ -61,5 +61,11 @@ namespace DriftRace
                 locomotionAbility.NotifyGripExit(this);
             }
         }
+
+        void Update()
+    {
+        transform.Rotate( new Vector3(0, 3f, 0) );
+    }
+
     }
 }

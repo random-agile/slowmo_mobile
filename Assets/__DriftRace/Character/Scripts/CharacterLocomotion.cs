@@ -18,7 +18,7 @@ namespace DriftRace
         [SerializeField] protected LineRenderer rope;
 
         [Header("Settings")]
-        [SerializeField] protected float speed = 5f;
+        [SerializeField] protected float speed = 10f;
         [SerializeField] protected float rotationSpeed = 15f;
         [SerializeField] protected LayerMask groundMask;
 
