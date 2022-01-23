@@ -1,0 +1,34 @@
+///-----------------------------------------------------------------
+///   Author : #DEVELOPER_NAME#                    
+///   Date   : #DATE#
+///-----------------------------------------------------------------
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using SLOWMOGameKit;
+
+
+namespace #NAMESPACE# 
+{
+    public class #SCRIPTNAME# : CharacterAbility<Character>
+    {
+        [Header("Settings")]
+        [SerializeField] protected float exempleSettings = 1f;
+
+        public override void StartAbility()
+        {
+            base.StartAbility();
+        }
+
+        public override void UpdateAbility()
+        {
+            base.UpdateAbility();
+        }
+
+        public override void StopAbility()
+        {
+            base.StopAbility();
+        }
+    }
+}
