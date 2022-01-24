@@ -22,6 +22,9 @@ namespace DriftRace
         [SerializeField] protected float rotationSpeed = 15f;
         [SerializeField] protected LayerMask groundMask;
 
+        [Header("Animation")]
+        [SerializeField] private Animator animator;
+
         private Grip currentGrip;
         private Action DoAction;
         private Vector3 currentForward = Vector3.forward;
@@ -31,6 +34,7 @@ namespace DriftRace
 
         protected override void Awake()
         {
+
             base.Awake();
             DoAction = DoActionVoid;
         }
@@ -45,6 +49,7 @@ namespace DriftRace
             {
                 if(DoAction == DoActionGoForward && currentGrip != null)
                 {
+                    animator.SetBool("isGrip", true);
                     SetModeRotateAroundGrip();
                 }
             }
@@ -53,6 +58,7 @@ namespace DriftRace
             {
                 if(DoAction == DoActionRotateAroundGrip)
                 {
+                    animator.SetBool("isGrip", false);
                     SetModeGoForward();
                 }
             }
@@ -185,6 +191,12 @@ namespace DriftRace
             {
                 currentGrip = null;
             }
+        }
+
+        public void Victory()
+        {
+            speed = 0;
+            animator.SetBool("isWin", true);
         }
 
     }

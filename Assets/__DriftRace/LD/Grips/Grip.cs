@@ -64,7 +64,7 @@ namespace DriftRace
 
         void Update()
     {
-        transform.Rotate( new Vector3(0, 3f, 0) );
+        transform.Rotate( new Vector3(0, 15f, 0) );
     }
 
     }

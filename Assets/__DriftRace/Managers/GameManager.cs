@@ -7,7 +7,13 @@ namespace DriftRace
 {
     public class GameManager : MonoBehaviour
     {
+        public static GameManager Instance;
         [SerializeField] private CharacterLocomotion locomotionAbility;
+
+        void Awake()
+        {
+            Instance = this;
+        }
 
         void Start()
         {
@@ -21,6 +27,11 @@ namespace DriftRace
             {
                 LevelGenerator.Instance.ReloadGame();
             }
+        }
+
+        public void LaunchVictory()
+        {
+            locomotionAbility.Victory();
         }
 
     }
