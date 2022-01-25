@@ -9,6 +9,7 @@ using UnityEngine;
 using SLOWMOGameKit;
 using System;
 using Dreamteck.Splines;
+using MoreMountains.Feedbacks;
 
 namespace DriftRace 
 {
@@ -24,6 +25,12 @@ namespace DriftRace
 
         [Header("Animation")]
         [SerializeField] private Animator animator;
+
+        [Header("VFX")]
+        [SerializeField] private Outline outline;
+        [SerializeField] private ParticleSystem aura;
+        [SerializeField] private MMFeedbacks WarpFeedback;
+
 
         private Grip currentGrip;
         private Action DoAction;
@@ -49,7 +56,12 @@ namespace DriftRace
             {
                 if(DoAction == DoActionGoForward && currentGrip != null)
                 {
+                    WarpFeedback?.PlayFeedbacks();
                     animator.SetBool("isGrip", true);
+                    outline.GetComponent<Outline>().enabled = true;
+                    aura.Play();
+                    SoundManager.StopSound();
+                    SoundManager.PlaySound("warpsound");
                     SetModeRotateAroundGrip();
                 }
             }
@@ -59,6 +71,11 @@ namespace DriftRace
                 if(DoAction == DoActionRotateAroundGrip)
                 {
                     animator.SetBool("isGrip", false);
+                    outline.GetComponent<Outline>().enabled = false;
+                    SoundManager.StopSound();
+                    SoundManager.audioSrc.loop = true;
+                    SoundManager.PlaySound("footstepsw");
+                    aura.Stop();
                     SetModeGoForward();
                 }
             }
